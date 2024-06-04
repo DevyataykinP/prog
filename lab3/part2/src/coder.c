@@ -46,6 +46,8 @@ int read_next_code_unit(FILE *in, CodeUnits *code_units)
     } 
     if (read_next_code_unit(in, code_units))
         return -1;
+    else
+        return 123123123;
 }
 
 int encode(uint32_t code_point, CodeUnits *code_units)
