@@ -41,11 +41,12 @@ void bubble_sort(int *arr, int size)
         flag = 0;
         for (int i = 0; i < size - 1; i++)
         {
-            for (int j = i; j < size; j++)
+            for (int j = 0; j < size - i; j++)
             {
-                if(arr[i]>=arr[j])
+                if(arr[j]>=arr[j+1])
                 {
-                    swap(&arr[i], &arr[j]);
+                    swap(&arr[j], &arr[j+1]);
+                    flag = 1;
                 }
             }
         }
