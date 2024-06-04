@@ -9,7 +9,7 @@ void swap(int *n1, int *n2)
 
 int partition(int *arr, int low, int high)
 {
-    int pivot = arr[high];
+    int pivot = arr[(low+high)/2];
     int j = low;
     for (int i = low; i <= high - 1;i++)
     {
