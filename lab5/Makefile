@@ -1,15 +1,17 @@
-all: main
+TARGET = ./main
+HDRS_DIR = \
+		src
+SRCS = \
+		src/main.c \
+		src/strings.c
+.PHONY: all, build, clean
 
-main: main.o strings/strings.o
-	gcc -Wall -Werror -I strings main.o strings/strings.o -o main -g -O2
+$(TARGET):
+		gcc -Wall -Werror -I $(HDRS_DIR) $(SRCS) -o $(TARGET)
 
-main.o: main.c
-	gcc -Wall -Werror -I strings -c main.c -o main.o -g
+all: clean build
 
-strings/strings.o: strings/strings.c
-	gcc -Wall -Werror -I strings -c strings/strings.c -o strings/strings.o -g
-
-.PHONY: clean
+build: $(TARGET)
 
 clean:
-	rm main *.o strings/*.o
+		rm -rf $(TARGET)

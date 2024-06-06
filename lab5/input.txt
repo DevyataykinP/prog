@@ -1,0 +1,2 @@
+delim: +
+paths: http://mysrv.com/Windows/+smb://192.168.1.1/test+http://192.500.1.1/test+ftp://my.ru/m/n/k.txt
