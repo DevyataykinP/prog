@@ -129,6 +129,31 @@ int main()
     }
     std::cout << "\n";
 
+	printf("\n  d) по спирали, начиная с левого верхнего элемента\n");
+	lim=size/2;
+	count=0;
+	int tmp;
+	for (tmp = 0; tmp < lim; tmp++)
+	{
+		for(i = tmp; i < size - tmp; i++, count++) //колонка вниз
+			arr[count] = matrix[i][tmp];
+		for(j = tmp + 1; j < size - tmp; j++, count++) //строка вправо
+			arr[count] = matrix[i - 1][j];
+		for(i = size - tmp - 2; i >= tmp; i--, count++) //колонка вверх
+			arr[count] = matrix[i][j - 1];
+		for(j = size - tmp - 2; j >= tmp + 1; j--, count++) //строка влево
+			arr[count] = matrix[i + 1][j];
+	}
+ 
+	if(size % 2 != 0)
+		arr[count] = matrix[lim][lim];
+
+	for (i = 0; i < size * size; i++)
+	{
+		printf("%d ", arr[i]);	
+	}
+	printf("\n");
+		
     for (i = 0; i < size; i++)
 		delete []matrix[i];
 	delete []arr;
