@@ -1,6 +1,8 @@
 #include <iostream>
 #include <ctime>
 
+using namespace std;
+
 int** genMatrix(int size){
     int **arr = new int *[size];
     for (int i = 0; i < size; i++){
@@ -21,9 +23,9 @@ void printMatrix(int** arr,int size){
     {
         for (int j = 0; j < size;j++)
         {
-            std::cout << arr[i][j] << " ";
+            cout << arr[i][j] << " ";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 }
 
@@ -31,7 +33,7 @@ int main()
 {
     srand(time(0));
     int size = 0;
-    std::cin >> size;
+    cin >> size;
     int **matrix = genMatrix(size);
     printMatrix(matrix,size);
 
@@ -66,12 +68,12 @@ int main()
             k++;
         }
     }
-    std::cout << "\n";
+    cout << "\n";
 	for (int i = 0; i < size * size; i++)
 	{
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << "\n";
+    cout << "\n";
     
     //по левым диагоналям
 	int i=0,j=0;
@@ -99,12 +101,12 @@ int main()
 			k++; //printf("%dx%d\t", j,z);
 		}
 	}
-    std::cout << "\n";
+    cout << "\n";
 	for (int i = 0; i < size * size; i++)
 	{
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << "\n";
+    cout << "\n";
 
     x = (size - 1) / 2;
 	y = x;
@@ -122,14 +124,14 @@ int main()
 		for(i = 0; (i < lim) && (y < size) && (y >= 0) && (x < size) && (x >= 0); i++) //вверх
 			arr[count++] = matrix[x--][y];
 	}
-    std::cout << "\n";
+    cout << "\n";
 	for (int i = 0; i < size * size; i++)
 	{
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << "\n";
+    cout << "\n";
+	cout << "\n";
 
-	printf("\n  d) по спирали, начиная с левого верхнего элемента\n");
 	lim=size/2;
 	count=0;
 	int tmp;
